@@ -179,3 +179,17 @@ create table employees_groups (
   group_id integer not null
 );
 
+create table projects (
+  project_id integer not null,
+  account_id integer not null,
+  name varchar(50) default null,
+  primary key (project_id, account_id)
+);
+
+create table bugs (
+  project_id integer not null,
+  name varchar(50) not null,
+  description varchar(50) not null,
+  primary key (project_id, name)
+);
+
